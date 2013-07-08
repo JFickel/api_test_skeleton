@@ -14,11 +14,16 @@
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
+  <script src="https://ttv-api.s3.amazonaws.com/twitch.min.js"></script>
 
   <title></title>
 </head>
+
 <body>
-  <a href="/logout">Logout</a>
+  <nav>
+    <img src="http://ttv-api.s3.amazonaws.com/assets/connect_dark.png" class="twitch-connect" href="#" />
+    <a href="/logout">Logout</a>
+  </nav>
   <%= yield %>
 </body>
 </html>

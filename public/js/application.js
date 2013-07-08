@@ -1,7 +1,21 @@
 $(document).ready(function() {
-  // This is called after the document has loaded in its entirety
-  // This guarantees that any elements we bind to will exist on the page
-  // when we try to bind to them
+  // initialize twitch sdk
+  Twitch.init({clientId: 'nan2jfbfe0mhllncuwfj43mhf2qarxv'}, function(error, status) {
+    // the sdk is now loaded
+    console.log(error);
+    console.log(status);
+  });
 
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+   // triggers login
+  $('.twitch-connect').click(function() {
+    Twitch.login({
+      scope: ['user_read', 'channel_read']
+    });
+  })
+
+  if (status.authenticated) {
+    // Already logged in, hide button
+    $('.twitch-connect').hide()
+  }
+  // console.log(status)
 });

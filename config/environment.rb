@@ -21,7 +21,9 @@ require 'sinatra'
 require "sinatra/reloader" if development?
 
 require 'erb'
-
+require 'omniauth'
+require 'omniauth-google-oauth2'
+require 'omniauth-twitch_oauth2'
 # Some helper constants for path-centric logic
 APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
 
@@ -34,8 +36,8 @@ Dir[APP_ROOT.join('app', 'helpers', '*.rb')].each { |file| require file }
 # Set up the database and models
 require APP_ROOT.join('config', 'database')
 
-use OmniAuth::Builder do
-  # For additional provider examples please look at 'omni_auth.rb'
-  provider :google_oauth2, '631878338394.apps.googleusercontent.com', 'sterRGO4MJHBiqyLXbT0eart', {}
-  provider :twitch_oauth2, 'l0dvrdx50eq84u4j2oi0rw02dy2a8d', 'ojfjvx7d6pymyb23gzo4s8zbt8lr8tk', {scope: "user_read user_blocks_edit user_blocks_read user_follows_edit channel_read channel_editor channel_commercial channel_stream channel_subscriptions channel_check_subscription chat_login"}
-end
+# use OmniAuth::Builder do
+#   # For additional provider examples please look at 'omni_auth.rb'
+#   provider :google_oauth2, '631878338394.apps.googleusercontent.com', 'sterRGO4MJHBiqyLXbT0eart', {}
+#   provider :twitch_oauth2, 'nan2jfbfe0mhllncuwfj43mhf2qarxv', 'm2ui57hdhmqdemkxdhaykwq4xdwwgl2', {scope: "user_read user_blocks_edit user_blocks_read user_follows_edit channel_read channel_editor channel_commercial channel_stream channel_subscriptions channel_check_subscription chat_login"}
+# end
