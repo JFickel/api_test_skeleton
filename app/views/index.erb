@@ -1,0 +1,23 @@
+<h1>Index.erb</h1>
+
+<div id="signin">
+  <h2>Sign In</h2>
+  <p><%= @errors %></p>
+  <form action="/signin" method="post">
+    <input name="user[email]" type="text" placeholder="email">
+    <input name="user[password]" type="password" placeholder="password">
+    <input type="submit">
+  </form>
+</div>
+
+<div id="signup">
+  <h2>Sign Up</h2>
+  <p><%= @errors %></p>
+  <form action="/users" method="post">
+    <input type="text" name="user[name]" placeholder="username">
+    <input type="text" name="user[email]" placeholder="email">
+    <input type="password" name="user[password]" placeholder="password">
+    <input type="password" name="user[password_confirmation]" placeholder="password confirmation">
+    <input type="submit">
+  </form>
+</div>
