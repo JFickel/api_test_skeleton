@@ -1,29 +1,119 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <!--
-    normalize.css removes cross-browser differences in defaults, e.g.,
-    differences in how form elements appear between Firefox and IE
-    See: http://necolas.github.com/normalize.css/
-  -->
-  <link rel="stylesheet" href="/css/normalize.css">
-  <!--
-    application.css is where you put your styles
-  -->
-  <link rel="stylesheet" href="/css/application.css">
 
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script src="/js/application.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+<!-- <html><head>
+  <meta charset="utf-8">
+  <title>TwitchTV SDK Example App</title>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
   <script src="https://ttv-api.s3.amazonaws.com/twitch.min.js"></script>
 
-  <title></title>
-</head>
+  <script>
+    (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/client:plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
 
+    window.CLIENT_ID = 'kwh498lg2c4p659yx8ng713d00q3rjp';
+    $(function() {
+      // Initialize. If we are already logged in, there is no
+      // need for the connect button
+      Twitch.init({clientId: CLIENT_ID}, function(error, status) {
+        if (status.authenticated) {
+          // we're logged in :)
+          $('.status input').val('Logged in! Allowed scope: ' + status.scope);
+          // Show the data for logged-in users
+          $('.authenticated').removeClass('hidden');
+        } else {
+          $('.status input').val('Not Logged in! Better connect with Twitch!');
+          // Show the twitch connect button
+          $('.authenticate').removeClass('hidden');
+        }
+      });
+
+
+      $('.twitch-connect').click(function() {
+        Twitch.login({
+          scope: ['user_read', 'channel_read']
+        });
+      })
+
+      $('#logout button').click(function() {
+        Twitch.logout();
+
+        // Reload page and reset url hash. You shouldn't
+        // need to do this.
+        window.location = window.location.pathname
+      })
+
+      $('#get-name button').click(function() {
+        Twitch.api({method: 'user'}, function(error, user) {
+          $('#get-name input').val(user.display_name);
+        });
+      })
+
+      $('#get-stream-key button').click(function() {
+        Twitch.api({method: 'channel'}, function(error, channel) {
+          $('#get-stream-key input').val(channel.stream_key);
+        });
+      })
+
+    });
+  </script>
+
+  <style type="text/css">
+  .hidden {
+    display: none;
+  }
+  </style>
+</head>
 <body>
-  <nav>
-    <img src="http://ttv-api.s3.amazonaws.com/assets/connect_dark.png" class="twitch-connect" href="#" />
-    <a href="/logout">Logout</a>
-  </nav>
-  <%= yield %>
-</body>
-</html>
+  <span id="signinButton">
+  <span
+    class="g-signin"
+    data-callback="signinCallback"
+    data-clientid="631878338394-cqeatoatpmhqu47kl5dtgq12o9n8psu6.apps.googleusercontent.com"
+    data-cookiepolicy="single_host_origin"
+    data-requestvisibleactions="http://schemas.google.com/AddActivity"
+    data-scope="https://www.googleapis.com/auth/plus.login">
+  </span>
+</span>
+  <h1>TwitchTV SDK Example App</h1>
+    <div class="status">
+      Status: <input readonly="readonly" size="60" val="Unknown">
+    </div>
+    <div class="authenticate hidden">
+      <img src="http://ttv-api.s3.amazonaws.com/assets/connect_dark.png" class="twitch-connect" href="#">
+    </div>
+
+    <h2 class="authenticated hidden">Authenticated</h2>
+    <div class="authenticated hidden">
+      <div id="logout">
+        <button>Log Out</button>
+      </div>
+
+      <div id="get-name">
+        <button>Get TwitchTV Name</button>
+        <input readonly="readonly" size="50" value="Unknown">
+      </div>
+
+      <div id="get-stream-key">
+        <button>Get TwitchTV Stream Key</button>
+        <input readonly="readonly" size="50" value="Unknown">
+      </div>
+
+    </div>
+
+
+</body></html>
+ -->

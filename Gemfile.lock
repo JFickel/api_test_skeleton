@@ -31,11 +31,15 @@ GEM
     faraday (0.8.7)
       multipart-post (~> 1.1)
     hashie (2.0.5)
+    httparty (0.9.0)
+      multi_json (~> 1.0)
+      multi_xml
     httpauth (0.2.0)
     i18n (0.6.1)
     jwt (0.1.8)
       multi_json (>= 1.5)
     multi_json (1.6.1)
+    multi_xml (0.5.1)
     multipart-post (1.2.0)
     oauth2 (0.8.1)
       faraday (~> 0.8)
@@ -99,6 +103,7 @@ DEPENDENCIES
   bcrypt-ruby
   debugger
   faker
+  httparty
   omniauth-google-oauth2
   omniauth-twitch_oauth2
   pg
